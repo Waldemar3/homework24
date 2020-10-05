@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return auth()->user();
 });
 
-Route::middleware(['auth:sanctum'])->group(function() {
+Route::middleware(['auth'])->group(function() {
     Route::get('/users', function () {
         return new \App\Http\Resources\UserCollection(\App\User::all());
     });
